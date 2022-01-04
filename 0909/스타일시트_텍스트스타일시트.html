@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일시트선언</title>
+    <style type="text/css">
+    .txt1{
+        font-size: 20px;
+        line-height: 40px; /*행간줄때 본인의 크기에서 행값을 더하기합니다*/
+        letter-spacing: 0px; /*글자한개한개사이간격*/
+        word-spacing: 0px; /*단어한개한개사이간격*/
+        text-indent: 0px;
+    }
+    .box{
+        width:400px;
+        height:150px;
+        background-color: mediumpurple;
+        text-align: center;
+    }
+    a{
+        text-decoration: none;
+    }
+    .txt2 {
+        font-family: "맑은고딕";
+        font-style: italic;
+        font-size : 12px;
+        line-height: 1.6;
+        font-weight: bold;
+        /* font: italic bold 12px/1.6 "맑은고딕" */
+    } /*font: font-style font-variant font-weight font-size font-family*/
+    </style>
+</head>
+
+<body>
+    <p class="txt1">
+        스타일시트 선언<br>
+        스타일시트 선언<br>
+        스타일시트 선언<br>
+        스타일시트 선언<br>
+        스타일시트 선언
+    </p>
+
+    <div class="box">스타일시트 선언</div>
+
+    <a href="#">네이버사이트로 이동하기</a>
+    <h3 style="text-decoration: underline; text-transform: capitalize">underline</h3>
+    <h3 style="text-decoration: overline; text-transform: lowercase">overline</h3>
+    <h3 style="text-decoration: line-through; text-transform: uppercase">line-through</h3>
+
+    <p class="txt2">
+        스타일시트 선언<br>
+        스타일시트 선언<br>
+        스타일시트 선언<br>
+        스타일시트 선언<br>
+        스타일시트 선언
+    </p>
+</body>
+</html>

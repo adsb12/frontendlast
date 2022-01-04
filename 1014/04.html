@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first/last 메소드</title>
+    <script src="js/script.js"></script>
+    <script>
+     $(document).ready(function(){
+       var el = $("#wrapper > ul > li");
+       el.first().css({color:"red"});
+       el.last().css({color:"blue"});
+     });
+    </script>
+</head>
+<body>
+    <span>
+       first() 메서드로 ul의 자식 엘리먼트중 첫번째 엘리먼트와
+       last() 메서드로 마지막 엘리먼트의 색을 바꿔 주세요.
+    </span>
+    <div id="wrapper">
+        <ul>
+            <li>1(여기를 바꿔 주세요)</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6(여기를 바꿔 주세요)</li>
+        </ul>
+    </div>
+</body>
+</html>

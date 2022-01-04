@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이딩메뉴</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul, ol, li{
+            list-style:none;
+        }
+        a{
+            text-decoration:none;
+            color:#444;
+        }
+        body{
+            font-size:16px;
+        }
+        ul{
+            margin:100px;
+        }
+        ul > li {
+            float:left;
+            width:150px;
+            height:150px;
+            border:1px solid #444;
+            position:relative;
+            overflow:hidden;
+        }
+        ul > li > div {
+            position:absolute;
+            top:150px;
+            left:-150px;
+            width:150px;
+            height:150px;
+            background-color:lavenderblush;
+        }
+    </style>
+    <script src="js/script.js"></script>
+    <script>
+        $(function() {
+            $("ul li").hover(
+            function() {
+                $(this).find(".inbox").stop().animate({left:"0px",top:"0px"},600);
+            },
+            function() {
+                $(this).find(".inbox").stop().animate({left:"-150px",top:"150px"},300);
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>
+            <div class="inbox"></div>
+            <a href="#">menu</a>
+        </li>
+        <li>
+            <div class="inbox"></div>
+            <a href="#">menu</a>
+        </li>
+        <li>
+            <div class="inbox"></div>
+            <a href="#">menu</a>
+        </li>
+        <li>
+            <div class="inbox"></div>
+            <a href="#">menu</a>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 방식</title>
+    <script>
+        var myFn = function() { // 대입형식의 함수형식
+            var area = document.getElementById("demo");
+            area.innerHTML = "Hello JavaScript!!";
+        }
+
+        // window.onload = function() { // 페이지를 읽어들이고 시작
+        //     // console.log("load event!!");
+        //     var button = document.getElementById("call");
+        //     button.onclick = function() {
+        //         console.log("Hello JavaScript");
+        //     }
+        // }
+
+        window.addEventListener("load", function() {
+            var button = document.getElementById("call");
+            button.addEventListener("click", function() {
+                console.log("Hello JavaScript");
+            });
+        });
+
+        // 콜백 함수는 대입 형식의 함수이며(MVC HTML 패턴(Model View Controller)에 알맞게 함수)
+        // 이 타입의 이벤트를 지양하는 이유는 중복된 이벤트의 실행이 되지 않기 때문
+
+    </script>
+</head>
+<body>
+    <h1 class="title">basic :: JavaScript event</h1>
+    <div class="container">
+        <button id="call" onclick="myFn()">event call</button>
+        <textarea id="demo" class="note">
+
+        </textarea>
+    </div>
+</body>
+</html>

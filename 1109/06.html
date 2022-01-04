@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: lawngreen;
+            padding: 5px 15px;
+            color:darkslateblue;
+            border: none;
+            cursor:pointer;
+            border-radius:5px;
+        }
+        button:hover{
+            background-color: darkgreen;
+            color: lightskyblue;
+        }
+        .ball{
+            position:absolute;
+            top:200px;
+            left:40px;
+            width:30px;
+            height:30px;
+            border-radius: 50%;
+            background-color: lawngreen;
+        }
+    </style>
+    <script>
+      window.addEventListener("load", function() {
+        var container = document.getElementsByClassName("container")[0];
+        var buttonList = [];
+
+        for(var i = 0; i < container.children.length; i++) {
+            if(container.children[i].tagName == "BUTTON") {
+                buttonList.push(container.children[i]); // 버튼을 배열방식으로 객체로
+            } else if(container.children[i].tagName == "DIV") {
+                var ball = container.children[i]; // 움직이는 박스를 객체로
+            }
+        }
+        // console.log(buttonList);
+        // console.log(ball);
+
+        var idName = ""; // click이벤트가 적용버튼의 아이디명을 저장하는 공간
+        var x = 40; // ball의 가로 초기값
+        var y = 180; // ball의 세로 초기값
+
+        for(i = 0; i < buttonList.length; i++) { // 자바스크립트는 여러객체에 이벤트를 적용 할 때는 반복문 사용
+        buttonList[i].addEventListener("click", function(e) { // 버튼들 중에서 하나를 클릭을 했을때
+            idName = e.target.id // 이벤트가 적용 대상의 아이디를 변수 idName저장
+            switch(idName) {
+                case "left":
+                    x = x - 20
+                    break;
+                case "right":
+                    x = x + 20
+                    break;
+                case "top":
+                    y = y - 20
+                    break;
+                case "bottom":
+                    y = y + 20
+                    break;
+                default: break;
+            }
+            ball.style.left = x + "px";
+            ball.style.top = y + "px";
+            });
+        }
+    });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <button id="left">left</button>
+        <button id="right">right</button>
+        <button id="top">top</button>
+        <button id="bottom">bottom</button>
+        <div class="ball"></div>
+    </div>
+</body>
+</html>

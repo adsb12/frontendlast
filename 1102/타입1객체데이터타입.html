@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체데이터타입</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        const dog = {name: "루시", age : 10, weight: 2.5};
+        console.log(dog);
+
+        console.log(`이름: ${dog.name}`);
+        console.log(`나이: ${dog.age}`);
+        console.log(`몸무게: ${dog.weight}`);
+
+        dog.weight = 3;
+        console.log(`${dog.weight}`); // 그거 참조라서 주소값의 정보는 안바뀜
+        console.log(dog);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+    <script>
+        function Max(x, y) {
+            if(x > y) {
+                return x;
+            } else if(x < y) {
+                return y;
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var x, y, res;
+        x = prompt("값을 입력하세요");
+        y = prompt("값을 하나 더 입력하세요");
+
+        x = parseInt(x); // 치환은 변수를 숫자형으로
+        y = parseInt(y);
+
+        res = Max(x, y); // 함수 호출하면서 매개변수 x, y를 전달 res는 함수가 처리된 결과값을 받기위한 변수
+
+        document.write(res);
+    </script>
+</body>
+</html>

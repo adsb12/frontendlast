@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style>
+body{ margin:0; padding:0;}
+ul, li{ list-style:none;}
+
+#top_menu{ float:left; width:100%; height:120px; background-color:#CCCCCC;}
+#top_menu ul{ margin:0 auto; margin-top:20px; width:1000px; }
+#top_menu ul li{ float:left; width:25%; height:30px; background-color:#999;}
+
+
+#contents{ float:left; width:100%;}
+#contents > div{ width:100%; height:700px;}
+#box1{ background-color:#FF0000;}
+#box2{ background-color:#3399FF;}
+#box3{ background-color:#FC0;}
+#box4{ background-color:#330099;}
+
+#q_menu{ position:absolute; top:120px; right:10px;
+               width:150px; height:200px; background-color:#F60;
+			   z-index:100;}
+</style>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.easing.1.3.min.js"></script>
+</head>
+
+<body>
+<div id="top_menu">
+  <ul class="nav">
+   <li><a href="box1">box1</a></li>
+   <li><a href="box1">box2</a></li>
+   <li><a href="">box3</a></li>
+   <li><a href="">box4</a></li>
+  </ul>
+</div>
+<div id="contents">
+ <div id="box1">box1</div>
+ <div id="box2">box2</div>
+ <div id="box3">box3</div>
+ <div id="box4">box4</div>
+</div>
+
+<div id="q_menu">
+ <ul class="nav">
+   <li><a href="">box1</a></li>
+   <li><a href="">box2</a></li>
+   <li><a href="">box3</a></li>
+   <li><a href="">box4</a></li>
+  </ul>
+</div>
+<script>
+//$(document).ready(function() {});
+$(function(){
+	 var menu = $(".nav > li");
+     var contents = $("#contents > div");
+	  
+	  menu.click(
+	  function(event){
+	     event.preventDefault();
+		
+		 var tg = $(this);
+		 var i = tg.index();
+		
+	  
+	     var section = contents.eq(i);	   
+		 var tt = section.offset().top;
+		 
+		  $('html, body').stop().animate({scrollTop:tt});
+	  });
+	
+	  //화면의 스크롤이 작동될때 퀵메뉴를 움직임
+	  $(window).scroll(function(){
+		  var windowTop=$(window).scrollTop()+50;
+		  $("#q_menu").stop().animate({top:windowTop+"px"}, 500);
+		  
+		  });
+	
+	});
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드배너</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul, ol, li{
+            list-style:none;
+        }
+        #main_img{
+            width:100%;
+            height:400px;
+        }
+        #img_area{
+            width:100%;
+            height:400px;
+            position:relative;
+            overflow:hidden;
+        }
+        #imgs li{
+            position:absolute;
+            top:0;
+            width:100%;
+            height:400px;
+        }
+        #imgs li:nth-child(1) {
+            background-color:lightcoral;
+            left:0%;
+        }
+        #imgs li:nth-child(2) {
+            background-color:lavenderblush;
+            left:100%;
+        }
+        #imgs li:nth-child(3) {
+            background-color:lightpink;
+            left:200%;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function() {
+            var current = 0;
+
+            timer();
+            function timer() {
+                setIntervalId = setInterval(function() {
+                    var n = current + 1; 
+                    if(n == 3) {
+                        n = 0;
+                    }
+                    move(n);
+                }, 4000);
+            }
+
+            function move(i) {
+                var currentEl = $("#imgs > li").eq(current);
+                var nextEl = $("#imgs > li").eq(i);
+
+                currentEl.css({left:"0%"}).animate({left:"-100%"});
+                nextEl.css({left:"100%"}).animate({left:"0%"});
+                
+                current = i;
+            }
+        });
+
+        // setInterval(function() {실행문}, 1000(시간));
+        // 자동실행문 1초에 한번씩 실행
+        
+        // setIntervalId = setInterval(실행문, 시간);
+        // setIntervalId 변수는 자동을 정지하기 위해 객체로 대상을 설정
+        // clearInterval(setIntervalId); setIntervalId객체의 자동실행을 정지
+
+        // setTimeout(실행문, 시간); 시간만큼 대기했다가 한번 실행
+    </script>
+</head>
+<body>
+    <div id="main_img">
+        <div id="img_area"> 
+            <!-- 이미지영역 -->
+            <ul id="imgs">
+                <!-- 이미지그룹 -->
+                <li>이미지1</li>
+                <li>이미지2</li>
+                <li>이미지3</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

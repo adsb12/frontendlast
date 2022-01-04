@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위치에 의한 선택메소드</title>
+    <script src="js/script.js"></script>
+    <script>
+     $(document).ready(function(){
+        var el = $("#wrapper > ul > li.first").nextAll();
+        el.css({color : "red"});
+     });
+    </script>
+</head>
+<body>
+    <span>nextAll() 메소드를 사용하여 1번의 다음에 존재하는 모든 형제 엘리먼트들의 글자색을 변경해 주세요.</span>
+    <div id="wrapper">
+        <ul>
+            <li class="first">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</body>
+</html>

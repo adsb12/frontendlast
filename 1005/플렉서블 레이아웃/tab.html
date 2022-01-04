@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab</title>
+    <style>
+        #tabBox{
+            width:400px;
+            height:550px;
+            border:2px solid #000;
+            position: relative;
+        }
+        input{
+            display:none;
+        }
+        label{
+            display:block;
+            float:left;
+            width:25%;
+            height:50px;
+            background-color:#ff9900;
+            font-size: 15px;
+            color:#fff;
+            font-weight:900;
+            text-align:center;
+            line-height: 50px;
+            cursor:pointer;
+        }
+        label:hover{
+            background-color: #ccc;
+            color:#000;
+            transition: 0.5s;
+        }
+        #tabBox > section{
+            width:400px;
+            height:500px;
+            position:absolute;
+            top:50px;
+            left:0;
+            display:none;
+        }
+        #con1{
+            background-color:aqua;
+            z-index:400;
+        }
+        #con2{
+            background-color:aquamarine;
+            z-index:300;
+        }
+        #con3{
+            background-color:chartreuse;
+            z-index:200;
+        }
+        #con4{
+            background-color:coral;
+            z-index:100;
+        }
+        #tabBox #tab1:checked ~ #con1,
+        #tabBox #tab2:checked ~ #con2,
+        #tabBox #tab3:checked ~ #con3,
+        #tabBox #tab4:checked ~ #con4{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div id="tabBox">
+       <label for="tab1">menu1</label><input type="radio" id="tab1" name="tab" checked>
+       <label for="tab2">menu2</label><input type="radio" id="tab2" name="tab">
+       <label for="tab3">menu3</label><input type="radio" id="tab3" name="tab">
+       <label for="tab4">menu4</label><input type="radio" id="tab4" name="tab">
+
+       <section id="con1">con1</section>
+       <section id="con2">con2</section>
+       <section id="con3">con3</section>
+       <section id="con4">con4</section>
+    </div>
+</body>
+</html>

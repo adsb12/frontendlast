@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        let arr = ['루시', 10, 3.5, true];
+        console.log(arr[0]);
+        console.log(arr[1]);
+        console.log(arr[2]);
+        console.log(arr[3]);
+
+        arr[4] = 'white';
+        console.log(arr[4]);
+        arr[5] = '포메리안';
+        console.log(arr[5]);
+
+        // length property : 배열 요소의 개수를 저장
+        // length 범위를 정하는 이유 : 유지 보수
+        console.log(arr.length);
+
+        arr.pop();
+        console.log(arr[5]);
+        console.log(arr);
+    </script>
+    <!--
+        let aaa = 0;
+        let bbb = "123"
+
+        let arr = [100,200,300]
+        or
+        let arr = []
+        arr[0] = 100;
+        arr[1] = 200;
+        arr[2] = 300;
+
+        배열은 이름과 인덱스로 참조되는 정렬된 값의 집합.
+        Array 객체의 메소드 
+        push() : 배열의 요소를 추가
+        pop() : 배열의 마지막 주소에 있는 값을 제거
+        shift() : 배열의 첫번째 주소에 있는 값을 제거
+        concat() : 두 개의 배열을 합침
+        join() : 배열 요소 사이에 원하는 문자를 삽입
+        reverse() : 배열을 역순으로 재배치
+        sort() : 배열을 오름차순으로 정렬
+    -->
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤위치를 읽고 설정하기</title>
+    <style>
+        ul, ol, li{
+            list-style:none;
+        }
+        .newEl{
+            color:red;
+        }
+    </style>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".list").after('<p class="newEl">대상을 기준으로 뒤에 추가</p>');
+        });
+    </script>
+</head>
+<body>
+    <span>
+      after()메서드를 사용하여 표시된 부분 아래에 newEl엘리먼트를 추가시켜 주세요.
+    </span>
+        <ul class="list">
+            <li>3-1</li>
+            <li>3-2</li>
+            <li>3-3</li>
+            <li>3-4</li>
+        </ul>
+</body>
+</html>

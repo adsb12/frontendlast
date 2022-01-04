@@ -1,0 +1,7 @@
+REM : dom에서 최상단의 글자사이즈 속성을 %로 환산
+EM : 부모글자의 사이즈로 속성을 %로 환산
+
+VW(Viewport Width) : 뷰포트 너비의 1% 길이와 동일합니다.
+VH(Viewport Height) : 뷰포트 높이의 1% 길이와 동일합니다.
+VMIN(Viewport Minimum) : 뷰포트 너비 또는 높이를 기준으로 하는 최소 값입니다.
+VMAX(Viewport Maximum) : 뷰포트 너비 또는 높이를 기준으로 하는 최대 값입니다.

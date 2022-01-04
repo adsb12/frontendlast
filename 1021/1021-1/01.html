@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이딩 갤러리</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul, ol, li{
+            list-style:none;
+        }
+        a{
+            text-decoration:none;
+        }
+        #slider{
+            margin:0 auto;
+            position:relative;
+            width:600px;
+            height:350px;
+            background:#fff;
+            border: 2px solid #fdf6dd;
+        }
+        #viewer{
+            overflow:hidden;
+            width:100%;
+            height:350px;
+            position:relative;
+        }
+        #viewer ul{
+            width:100%;
+            position:absolute;
+        }
+        #viewer li{
+            position:absolute;
+            top:0;
+            width:100%;
+            height:350px;
+        }
+        #viewer li.img1{
+            left:0;
+            background-color:lightcoral;
+        }
+        #viewer li.img2{
+            left: 600px;
+            background-color:lightcyan;
+        }
+        #viewer li.img3{
+            left:1200px;
+            background-color:lightgreen;
+        }
+        #viewer li.img4{
+            left:1800px;
+            background-color:lightsalmon;
+        }
+        .btns{
+            position:absolute;
+            right:0;
+            bottom:2%;
+        }
+        .btns li{
+            float:left;
+            margin-right:6px;
+            width:16px;
+            height:16px;
+            background:darkslateblue;
+            cursor:pointer;
+        }
+        .btns li a{
+            display:block;
+            width:100%;
+            height:100%;
+            line-height:1;
+            text-align:center;
+            background:darkorange;
+            color:lime;
+        }
+        .btns li a:hover{
+            background:darkgoldenrod;
+        }
+        .btns li a.act{
+            background:deeppink;
+            color:#fff;
+        }
+        #prev{
+            position:absolute;
+            left:10px;
+            bottom:-30px;
+        }
+        #next{
+            position:absolute;
+            left:80px;
+            bottom:-30px;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    
+    <div id="slider">
+        <div id="viewer">
+            <ul>
+                <li class="img1">img1</li>
+                <li class="img2">img2</li>
+                <li class="img3">img3</li>
+                <li class="img4">img4</li>
+            </ul>
+        </div>
+        <ul class="btns">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+        </ul>
+        <button id="prev">previous</button>
+        <button id="next">next</button>
+    </div>
+    <script>
+        var current = 0;
+
+        $(".btns > li").click(function(e) { // function (e)에서 e는 매개변수다
+            // 매개변수를 발생하는 함수의 이벤트를 저장하는 변수 
+            e.preventDefault(); // a 태그의 href속성을 초기화
+           var n = $(this).index(); // 버튼에 따라서 0, 1, 2, 3
+           $(".btns > li > a").removeClass("act");
+           $(this).find("a").addClass("act");
+           slideTarget(n);
+        });
+        
+        var k = $("#prev").click(function(e) {
+            e.preventDefault();
+            if(current > 0) {
+                current--;
+                slideTarget(current);
+            }
+        });
+
+        $("#next").click(function(e) {
+            e.preventDefault();
+            
+            if(current < 3) {
+                current++;
+                slideTarget(current);
+            } else {
+                current = 0;
+                slideTarget(current);
+            }
+        });
+
+        function slideTarget(n) {
+            var pos = n * (-600) + "px";
+            current = n;
+            $("#viewer ul").animate({left:pos});
+
+            $(".btns > li > a").removeClass("act");
+            $(".btns > li").eq(n).find("a").addClass("act");
+        }
+
+    </script>
+
+</body>
+</html>

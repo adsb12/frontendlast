@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블만들기</title>
+</head>
+<body>
+    <table width="200" height="200" border="1" bgcolor="#cccccc">
+        <tr>
+            <td width="100" height="100" bgcolor="red">a</td>
+            <td width="100" height="100" bgcolor="green"></td>
+        </tr>
+        <tr>
+            <td width="100" height="100" bgcolor="skyblue"></td>
+            <td width="100" height="100" bgcolor="blue"></td>
+        </tr>
+    </table>
+    <br><br><br><br><br>
+
+    <!-- 
+            bgcolor="키워드나 #000000로 색상값표현" 배경색
+            background="이미지경로" 배경이미지
+
+            cellspacing td와td사이의 여백, 기본적으로 cellspacing="0"
+            cellpadding td를 기준으로 안쪽으로 여백, 기본적으로 cellpadding="0"
+
+            align= "가로위치"
+             - left : 왼쪽으로 정렬한다.(기본값)
+             - right : 오른쪽으로 정렬한다.
+             - center : 가운데로 정렬한다.
+            
+            valign="세로위치"
+             - top : 위쪽으로 정렬한다.
+             - middle : 가운데로 정렬한다.(기본값)
+             - bottom : 아래로 정렬한다.
+
+            colspan td와 td를 가로로 합치는 기능
+            rowspan td와 td를 세로로 합치는 기능
+            -->
+
+    <!-- 가로크기600 세로크기800 가로는 5칸 세로는 8줄 -->
+    <table width="600" height="800" cellspacing="10" cellpadding="10" border="1">
+        <tr> 
+            <!-- 1번줄 -->
+            <td width="120" height="100" align="center" valign="top">a</td>
+            <td width="120" height="100" align="right" valign="bottom">a</td>
+            <td width="120" height="100">a</td>
+            <td width="120" height="100">a</td>
+            <td width="120" height="100">a</td>
+        </tr>
+        <tr>
+            <!-- 2번줄 -->
+            <td width="120" height="100">b</td>
+            <td width="120" height="100">b</td>
+            <td width="120" height="100" colspan="3">b</td>
+        </tr>
+        <tr>
+            <!-- 3번줄 -->
+            <td width="120" height="100" colspan="2"></td>
+            <td width="120" height="100"></td>
+            <td width="120" height="100"></td>
+            <td width="120" height="100"></td>
+        </tr>
+        <tr>
+            <!-- 4번줄 -->
+            <td width="120" height="100" colspan="5"></td>
+        </tr>
+        <tr>
+            <!-- 5번줄 -->
+            <td width="120" height="100" rowspan="2"></td>
+            <td width="120" height="100" colspan="3"></td>
+            <td width="120" height="100"></td>
+        </tr>
+        <tr>
+            <!-- 6번줄 -->
+            <td width="120" height="100"></td>
+            <td width="120" height="100"></td>
+            <td width="120" height="100"></td>
+            <td width="120" height="100" rowspan="3"></td> 
+        </tr>
+        <tr>
+            <!-- 7번줄 -->
+            <td width="120" height="100"></td>
+            <td width="120" height="100"></td>
+            <td width="120" height="100"></td>
+            <td width="120" height="100"></td>
+        </tr>
+        <tr>
+            <!-- 8번줄 -->
+            <td width="120" height="100"></td>
+            <td width="120" height="100"></td>
+            <td width="120" height="100"></td>
+            <td width="120" height="100"></td>
+        </tr>
+    </table>
+
+    <!-- 가로500 세로500 5줄에 5칸 만들기-->
+    <table width="500" heigth="500" border="1">
+        <tr>
+            <td width="100" height="100" rowspan="2" bgcolor="#BF69ED"></td>
+            <td width="100" height="100"></td>
+            <td width="100" height="100"></td>
+            <td width="100" height="100" colspan="2" bgcolor="#BF69ED"></td>
+        </tr>
+        <tr>
+            <td width="100" height="100"></td>
+            <td width="100" height="100"></td>
+            <td width="100" height="100"></td>
+            <td width="100" height="100"></td>
+        </tr>
+        <tr>
+            <td width="100" height="100"></td>
+            <td width="100" height="100"></td>
+            <td width="100" height="100" colspan="2" bgcolor="#BF69ED"></td>
+            <td width="100" height="100" rowspan="2" bgcolor="red"></td>
+        </tr>
+        <tr>
+            <td width="100" height="100" rowspan="2" bgcolor="#BF69ED"></td>
+            <td width="100" height="100"></td>
+            <td width="100" height="100"></td>
+            <td width="100" height="100"></td>
+        </tr>
+        <tr>
+            <td width="100" height="100"></td>
+            <td width="100" height="100"></td>
+            <td width="100" height="100"></td>
+            <td width="100" height="100"></td>
+        </tr>
+    </table>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+#wrap{
+    width:100%;
+}
+#header{
+    float:left;
+    width:100%;
+}
+#header_top{
+    margin: 0 auto;
+    width:965px;
+    height:140px;
+    position:relative;
+}
+/* 프렌차이즈 */
+#header_top .gnb_smenu{
+    position:absolute;
+    top:15px;
+}
+#header_top .gnb_smenu > li{
+    float:left;
+    margin-right:5px;
+}
+/* 인포메뉴 */
+#header_top .info_mn{
+    float:right;
+}
+#header_top .info_mn > li{
+    float:left;
+    margin:15px 0 0 5px;
+}
+#header_top .info_mn > li > a{
+    font-size:13px;
+    color:#ccc;
+}
+/* 로고 */
+#header_top .logo{
+    float:left;
+    margin: 40px 340px 0 340px;
+}
+/* 네비게이션 */
+#header_top .nav{
+    margin-top:37px;
+    float:left;
+    width:100%;
+    height:40px;
+    background-color: aquamarine;
+}
+#header_top .nav > h2{
+    float:left;
+}
+#header_top .nav > h2 > a{
+    margin: 0 auto;
+    margin-right:102px;
+}
+/* 메인이미지 */
+#main_img{
+    float:left;
+    width:100%;
+    height:480px;
+    background:url(../images/main_visual11.jpg) no-repeat 50% 0;
+}
+#content{
+    float:left;
+    width:100%;
+}
+#item{
+    margin: 0 auto;
+    margin-top:45px;
+    width:945px;
+    height:600px;
+    background-color: aqua;
+}
+#footer{
+    float:left;
+    width:100%;
+    height:125px;
+    background-color:blueviolet;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일시트선언</title>
+    <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2? family= Urbanist:wght@100 & display=swap');
+    /* 선택자{속성:속성값} */
+    *{font-style: italic;}
+
+    h1 {
+        font-size : 30px; 
+        color : dodgerblue; 
+        /* font-family : "맑은고딕"; */
+        font-family: 'Urbanist', sans-serif;
+    }
+
+    .txt1{
+        /* font-size : 20px; 
+        color : greenyellow; 
+        font-family : "맑은고딕";
+        font-weight: 500; */
+        font:"궁서체" 20px  red 500;
+    } /*font: font-style font-variant font-weight font-size font-family*/
+
+    #txt2{
+        font-size : 25px; 
+        color :hotpink; 
+        font-family : "맑은고딕";
+    }
+    </style>
+</head>
+<body>
+    <h1>스타일시트제목선언하기</h1>
+    <h1 class="txt1">스타일시트서브제목선언하기</h1>
+    <p class="txt1">
+        스타일시트서브제목선언하기<br>
+        스타일시트서브제목선언하기<br>
+        스타일시트서브제목선언하기
+    </p>
+    <h3 id="txt2">다른스타일시트의 제목</h3>
+    <h3>다른스타일시트의 제목</h3>
+    <h3 style="font-variant: small-caps;">kimjunghun</h3>
+</body>
+</html>

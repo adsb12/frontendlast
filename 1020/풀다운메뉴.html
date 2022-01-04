@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가로메뉴만들기</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul, ol, li{
+            list-style:none;
+        }
+        a{
+            text-decoration:none;
+            color:#444;
+        }
+        body{
+            font-size:16px;
+        }
+        #wrap{
+            width:100%;
+        }
+        #header{
+            width:100%;
+            height:100px;
+            position:relative;
+        }
+        #header nav{
+            margin:0 auto;
+            width:1200px;
+            height:100px;
+        }
+        #header nav li{
+            float:left;
+            width:20%;
+            height:100px;
+            background-color:lawngreen;
+        }
+        #header nav a{
+            display:block;
+            color:#444;
+            text-align:center;
+            line-height:100px;
+        }
+        #header nav a.on{
+            background-color:lightgreen;
+            color:darkorange;
+        }
+        #submn_area{
+            position:absolute;
+            top:100px;
+            left:0;
+            z-index:5000;
+            width:100%;
+            height:0;
+            background-color:lemonchiffon;
+            overflow:hidden;
+            /* overflow:hidden 서브의 높이가 작아지더라도 안의 내용의 높이가 있다면 보일것이므로 숨기기 위해서 */
+        }
+        #main_img{
+            width:100%;
+            height:350px;
+            background-color:lightcoral;
+        }
+    </style>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <nav>
+                <ul>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">menu</a></li>
+                </ul>
+            </nav>
+            <div id="submn_area">submn_area</div>
+        </header>
+        <section id="main_img">main_img</section>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#submn_area").css({height:0});
+
+            $("nav ul").mouseenter(function() {
+                $("#submn_area").stop().animate({height:"250px"},1000); 
+            });
+
+            $("#submn_area").mouseleave(function() {
+                $("#submn_area").stop().animate({height:"0px"},500);
+            });
+
+            $("nav a").hover(
+                function() {
+                    $(this).addClass("on");
+                },
+                function() {
+                    $(this).removeClass("on");
+                });
+        });
+    </script>
+</body>
+</html>

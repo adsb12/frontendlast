@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>width_height</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #wrapper{
+            border: 5px solid blue;
+            padding: 30px;
+            margin:20px;
+            font-size:20px;
+        }
+    </style>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function(){
+            var box = $("#wrapper");
+            $(window).resize(function() {
+            $("#width").text(box.width());
+            $("#height").text(box.height());
+
+            $("#innerWidth").text(box.innerWidth());
+            $("#innerHeight").text(box.innerHeight());
+
+            // $(어떤대상).width(); 어떤대상의 가로값
+            // $(어떤대상).text(); 어떤대상의 글자
+            });
+        });
+    </script>
+</head>
+<body>
+    <span>
+    브라우저 창의 크기를 변경해 보고 박스의 크기가 각 메서드에 따라 어떻게 다른지 확인해 보세요.
+    </span>
+
+    <div id="wrapper">
+        <span>박스의 width = </span><span id="width">0</span><br>
+        <span>박스의 height = </span><span id="height">0</span><br>
+        <span>박스의 innerWidth = </span><span id= "innerWidth">0</span><br>
+        <span>박스의 innerHeight = </span><span id= "innerHeight">0</span><br>
+        <span>박스의 outerWidth = </span><span id= "outerWidth">0</span><br>
+        <span>박스의 outerHeight = </span><span id= "outerHeight">0</span><br>
+    </div>
+</body>
+</html>

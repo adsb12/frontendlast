@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: lawngreen;
+            padding: 5px 15px;
+            color:darkslateblue;
+            border: none;
+            cursor:pointer;
+            border-radius:5px;
+        }
+        button:hover{
+            background-color: darkgreen;
+            color: lightskyblue;
+        }
+        .ball{
+            position:absolute;
+            top:200px;
+            left:40px;
+            width:30px;
+            height:30px;
+            border-radius: 50%;
+            background-color: lawngreen;
+        }
+    </style>
+    <script>
+      window.addEventListener("load", function() {
+        var body =  document.body;
+        var container = document.getElementsByClassName("container")[0];
+        var ball = container.children[0];
+
+        // 노드의 속성
+        var x = ball.offsetLeft;
+        var y = ball.offsetTop;
+        var w = ball.offsetWidth;
+        var h = ball.offsetHeight;
+
+        body.addEventListener("keydown", function(e) {
+            switch(e.keyCode) {
+                case 37:
+                    x = x - 20
+                    break;
+                case 39:
+                    x = x + 20
+                    break;
+                case 38:
+                    y = y - 20
+                    break;
+                case 40:
+                    y = y + 20
+                    break;
+                default: break;
+            }
+            ball.style.left = x + "px";
+            ball.style.top = y + "px";
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="ball"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on메소드</title>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("p").on({
+                click:function() {
+                    $("p").css("background-color", "red");
+                },
+                mouseover:function() {
+                    $("p").css({"font-size": "30px", "color":"blue"});
+                },
+                mouseout:function() {
+                    $("p").css({"border":"1px solid #000"});
+                }
+            });
+        });
+    </script>
+    <style>
+        p{
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>마우스 포인터를 이곳에 대 보세요</p>
+</body>
+</html>

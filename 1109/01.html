@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="title">basic :: JavaScript node access</h1>
+    <div class="container">
+        <ul id="tutorial">
+            <li class="html">HTML</li>
+            <li class="css">CSS</li>
+            <li class="css3">CSS3</li>
+            <li class="javascript">JavaScript</li>
+            <li class="jquery">jQuery</li>
+            <li class="blank"></li>
+        </ul>
+        <p id="portfolio">portfolio</p>
+    </div>
+    <script>
+        // id로 접근
+        // var tutorial = document.getElementById("tutorial");
+        // tutorial.style.backgroundColor = "#666";
+
+        // class로 접근
+        // var html = document.getElementsByClassName("html");
+        // html[0].style.backgroundColor = "#666";
+
+        // tag로 접근
+        // var li = document.getElementsByTagName("li");
+        // for(var i = 0; i < li.length; i++) {
+        //     li[i].style.backgroundColor = "#666";
+        // }
+
+        // 첫 번째 노드를 선택
+        // var li = document.querySelector("#tutorial > li");
+        // li.style.backgroundColor = "#666";
+
+        // 전체 노드를 선택
+        var li = document.querySelectorAll("#tutorial > li");
+        for(var i = 0; i < li.length; i++) {
+            li[i].style.backgroundColor = "#666";
+        }
+    </script>
+</body>
+</html>

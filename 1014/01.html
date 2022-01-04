@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위치에 의한 선택메소드</title>
+    <script src="js/script.js"></script>
+    <script>
+     $(document).ready(function(){
+        var len = $("#wrapper > ul > li").length;
+        // size() 1.8버전이후 length로 대상의 갯수 알리는 매서드 바뀜
+        alert(len);
+     });
+    </script>
+</head>
+<body>
+    <span>size() 메서드로 ul의 자식 엘리먼트의 갯수 세어보기</span>
+    <div id="wrapper">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</body>
+</html>

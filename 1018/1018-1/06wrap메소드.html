@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤위치를 읽고 설정하기</title>
+    <style>
+        ul, ol, li{
+            list-style:none;
+        }
+        #wrap{
+            border:3px dotted aqua;
+        }
+    </style>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".list").wrap('<div id="wrap">');
+        });
+    </script>
+</head>
+<body>
+    <span>
+      wrap과 wrapAll의 차이점 wrap() 메서드의 경우 select한 엘리먼트의 확장
+      집합을 개별적으로 wrapping을 한다. 반면 wrapAll() 메서드의 경우 select한
+      엘리먼트의 확장 집합의 전체를 모아 한번에 wrapping을 한다.
+    </span>
+        <ul class="list">
+            <li>3-1</li>
+            <li>3-2</li>
+            <li>3-3</li>
+            <li>3-4</li>
+        </ul>
+</body>
+</html>

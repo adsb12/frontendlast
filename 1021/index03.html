@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드배너</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul, ol, li{
+            list-style:none;
+        }
+        #main_img{
+            position:relative; /* btns를 원하는 위치 배치하기 위해서*/
+            width:100%;
+            height:400px;
+        }
+        #img_area{
+            width:100%;
+            height:400px;
+            position:relative;
+            /* overflow:hidden; */
+        }
+        #imgs li{
+            position:absolute;
+            top:0;
+            left:0%;
+            width:100%;
+            height:400px;
+            opacity:0;
+        }
+        #imgs li:nth-child(1) {
+            background-color:lightcoral;
+            /* left: 0%; */
+            z-index:300;
+            opacity:1;
+        }
+        #imgs li:nth-child(2) {
+            background-color:lavenderblush;
+            /* left: 0%; */
+            z-index:200;
+        }
+        #imgs li:nth-child(3) {
+            background-color:lightpink;
+            /* left: 0%; */
+            z-index:100;
+        }
+        /* #imgs li:nth-child(1) {
+            background-color:lightcoral;
+            z-index: 300;
+        }
+        #imgs li:nth-child(2) {
+            background-color:lavenderblush;
+            z-index: 200;
+        }
+        #imgs li:nth-child(3) {
+            background-color:lightpink;
+            z-index: 100;
+        } */
+        #main_img .btns{
+            position:absolute;
+            bottom:30px;
+            left: 50%;
+            margin-left:-32.5px;
+            z-index:1000;
+        }
+        #main_img .btns li{
+            float:left;
+            width:15px;
+            height:15px;
+            background-color:lightblue;
+            border-radius:50%;
+            margin-right:10px;
+        }
+        #main_img .btns li.on{
+            background-color:lawngreen;
+        }
+        #main_img .btns a{
+            display:block;
+            text-indent:-9999px;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function() {
+
+            var current = 0;
+            var setIntervalId;
+
+            $(".btns > li").click(function() {
+                var i = $(this).index();
+                move(i);
+                $(".btns > li").removeClass();
+                $(this).addClass("on");
+            });
+
+            // $("#main_img").hover(
+            //     function() {},
+            //     function() {}
+            //     );
+
+            $("#main_img").on({
+                mouseover:function() {
+                    clearInterval(setIntervalId);
+                },
+                mouseout:function() {
+                    timer();
+                }
+            });
+
+            timer();
+            // 자동실행을 함수호출하는 방식을 채택
+            function timer() {
+                // setInterval(실행문, 1000);
+                // clearInterval(정지시킬 객체명);
+                setIntervalId = setInterval(function() {
+                    var n = current + 1;
+                    if(n == 3){
+                        n = 0;
+                    }
+                    move(n);
+                },3000);
+            }
+
+            // 애니메이션
+            function move(i) {
+
+                var currentEl = $("#imgs > li").eq(current);
+                var nextEl = $("#imgs > li").eq(i);
+
+                currentEl.css({opacity:1}).animate({opacity:0});
+                nextEl.css({opacity:0}).animate({opacity:1});
+
+                // currentEl.css({"z-index":300}).animate({"z-index":100});
+                // nextEl.css({"z-index":100}).animate({"z-index":300});
+
+                current = i;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="main_img">
+        <div id="img_area"> 
+            <!-- 이미지영역 -->
+            <ul id="imgs">
+                <!-- 이미지그룹 -->
+                <li>이미지1</li>
+                <li>이미지2</li>
+                <li>이미지3</li>
+            </ul>
+        </div>
+        <ul class="btns">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+        </ul>
+    </div>
+</body>
+</html>

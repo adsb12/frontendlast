@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter 메소드</title>
+    <script src="js/script.js"></script>
+    <script>
+     $(document).ready(function(){
+       var el = $("#wrapper > ul > li").filter(".el");
+       el.css({color:"red"});
+     });
+    </script>
+</head>
+<body>
+    <span>
+       ul의 자식 엘리먼트중 클래스값이 el인 엘리먼트만 글자색을 변경해 주세요.
+    </span>
+    <div id="wrapper">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li class="el">4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</body>
+</html>

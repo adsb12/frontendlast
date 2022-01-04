@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내가 원하는곳에 배치하기</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+         }
+
+         body{
+             height:6000px;
+        }
+
+         .box0{
+            float:left;
+            margin:0px;
+            width:100px;
+            height:100px;
+            background-color: black;
+        }
+
+        .box01{
+            float:left;
+            margin:0px;
+            position:absolute; 
+            z-index:100;
+            top:200px; 
+            left:250px;
+            width:100px;
+            height:100px;
+            background-color: aqua;
+        }
+
+        .box02{
+            float:left;
+            margin:0px 0px;
+            position:relative; 
+            z-index:1;
+            top:200px; 
+            left:200px;
+            width:100px;
+            height:100px;
+            background-color: aquamarine;
+        }
+
+        .box03{
+            position:fixed; 
+            z-index:1;
+            top:200px; 
+            right:50px;
+            width:100px;
+            height:100px;
+            background-color: rgb(105, 79, 250);
+        }
+
+        .box04{
+            position:fixed;
+            bottom:0px;
+            left:0px;
+            width:100%; 
+            height:120px;
+            background-color:#ccc;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="box0">box0</div>
+    <div class="box01">box01</div>
+    <div class="box02">box02</div>
+    <div class="box03">box03</div>
+    <div class="box04">box04</div>
+
+</body>
+</html>

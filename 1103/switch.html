@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        const a = prompt("이름을 입력하세요");
+        const b = Number(prompt("국어점수를 입력하세요"));
+        const c = Number(prompt("영어점수를 입력하세요"));
+        const d = Number(prompt("수학점수를 입력하세요"));
+        const sum = b + c + d;
+
+        const ave = (b + c + d)/3;
+
+        let f = "";
+
+        switch(parseInt(ave/10)) {
+            case 10 : 
+            case 9 :
+                f = "A학점";
+            break;
+
+            case 8 :
+                f = "B학점";
+            break;
+
+            case 7 :
+                f = "C학점";
+            break;
+
+            case 6 :
+                f = "D학점";
+            break;
+
+            default :
+                f = "F학점";
+        }
+
+        document.write(a + "님의 성적표" + "</br>");
+        document.write("국어점수 : " + b + "</br>");
+        document.write("영어점수 : " + c + "</br>");
+        document.write("수학점수 : " + d + "</br>");
+        document.write("총점 : " + sum + "</br>");
+        document.write("평균 : " + ave + "</br>");
+        document.write("학점 : " + f);
+
+        // document.write(`<h2>${a}님 성적표</h2>`);
+        // document.write(`국어점수 : ${b}점</br>`);
+
+        
+    </script>
+</body>
+</html>

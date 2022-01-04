@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위치에 의한 선택메소드 응용</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        ul.main{
+            width:200px;
+        }
+        ul.main > li{
+            text-align:center;
+            float:left;
+            width:100px;
+            background-color:aquamarine;
+        }
+        ul.submn{
+            width:100%;
+            line-height: 25px;
+            background-color:coral;
+        }
+    </style>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".submn").hide();
+
+            // 이벤트가 걸리는 대상을 기준해서 다음에 오는 엘리먼트를 효과줌
+            // $(".mn").click(function() {
+            //     $(".submn").hide();
+            //     $(this).next(".submn").show(600);
+            // });
+
+            $(".main > li").hover(
+                function() {
+                    $(this).find(".submn").slideDown();
+                },
+                function() {
+                    $(this).find(".submn").slideUp();
+                } 
+            );
+        });
+    </script>
+</head>
+<body>
+    <ul class="main">
+        <li>
+            <a href="#" class="mn">menu1</a>
+            <ul class="submn">
+                <li><a href="#">submn1</a></li>
+                <li><a href="#">submn2</a></li>
+                <li><a href="#">submn3</a></li>
+                <li><a href="#">submn4</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="mn">menu2</a>
+            <ul class="submn">
+                <li><a href="#">submn1</a></li>
+                <li><a href="#">submn2</a></li>
+                <li><a href="#">submn3</a></li>
+                <li><a href="#">submn4</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

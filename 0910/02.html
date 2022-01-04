@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스의 바깥쪽 여백</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+         }
+        .box01{
+            float:left;
+            margin:0px;
+            width:100px;
+            height:100px;
+            background-color: aqua;
+        }
+
+        .box02{
+            float:left;
+            margin:0px 0px;
+            width:100px;
+            height:100px;
+            background-color: aquamarine;
+        }
+
+        .box03{
+            float:left;
+            margin: 0px 0px 0px;
+            width:100px;
+            height:100px;
+            background-color: chartreuse;
+        }
+
+        .box04{
+            float:left;
+            margin: 50px 200px 10px 300px;
+            width:100px;
+            height:100px;
+            background-color: coral;
+        }
+
+        .box05{
+            float:left;
+            clear: left;
+            margin: 50px 200px 10px 300px;
+            width:100px;
+            height:100px;
+            background-color: coral;
+        }
+
+        .box06{
+            float:left;
+            padding: 50px 0 0 20px;
+            width:100px;
+            height:100px;
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box01">box01</div>
+    <div class="box02">box02</div>
+    <div class="box03">box03</div>
+    <div class="box04">box04</div>
+    <div class="box05">box05</div>
+    <div class="box06">box06</div>
+    
+</body>
+</html>

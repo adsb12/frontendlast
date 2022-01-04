@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        if(window.addEventListener) {
+            window.addEventListener("load", function() {
+                var button = document.getElementById("call");
+                var note = document.getElementById("demo");
+
+                button.addEventListener("click", function() {
+                    note.innerHTML = "Hello JavaScript!!";
+                });
+            });
+        } else {
+            // Internet Explore 9버전 이하에서 사용하는 이벤트 형식
+            window.attachEvent("onload", function() {
+                var button = document.getElementById("call");
+                var note = document.getElementById("demo");
+
+                button.attachEvent("onclick", function() {
+                    note.innerHTML = "Hello JavaScript!!";
+                });
+            });
+        }
+
+    </script>
+</head>
+<body>
+    <h1 class="title">basic :: JavaScript event</h1>
+    <div class="container">
+        <button id="call">event call</button>
+        <textarea id="demo" class="note">
+
+        </textarea>
+    </div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가로메뉴만들기</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul, ol, li{
+            list-style:none;
+        }
+        a{
+            text-decoration:none;
+            color:#444;
+        }
+        body{
+            font-size:16px;
+        }
+        .nav{
+            margin:200px;
+            width:600px;
+            height:30px;
+        }
+        .nav > ul > li{
+            float:left;
+            width:20%;
+            height:30px;
+            background-color: aquamarine;
+            text-align:center;
+            line-height:1.8em;
+            position:relative;
+        }
+        .nav > ul > li:hover{
+            background-color:blueviolet;
+        }
+        .nav > ul > li > a{
+            color:#fff;
+        }
+        .nav > ul > li:hover a{
+            color:#000;
+        }
+        .submn{
+            width:100%;
+            position:absolute;
+            top:30px;
+            left:0;
+        }
+        .submn > li{
+            width:100%;
+            height:30px;
+            background-color:aqua;
+            text-align:center;
+            line-height:30px;
+        }
+        .submn > li:hover{
+            background-color:coral;
+        }
+    </style>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <nav class="nav">
+        <ul class="mainmn">
+            <li><a href="#">menu1</a>
+                <ul class="submn">
+                    <li><a href="#">menu1-1</a></li>
+                    <li><a href="#">menu1-2</a></li>
+                    <li><a href="#">menu1-3</a></li>
+                    <li><a href="#">menu1-4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">menu2</a>
+                <ul class="submn">
+                    <li><a href="#">menu2-1</a></li>
+                    <li><a href="#">menu2-2</a></li>
+                    <li><a href="#">menu2-3</a></li>
+                    <li><a href="#">menu2-4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">menu3</a>
+                <ul class="submn">
+                    <li><a href="#">menu3-1</a></li>
+                    <li><a href="#">menu3-2</a></li>
+                    <li><a href="#">menu3-3</a></li>
+                    <li><a href="#">menu3-4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">menu4</a>
+                <ul class="submn">
+                    <li><a href="#">menu4-1</a></li>
+                    <li><a href="#">menu4-2</a></li>
+                    <li><a href="#">menu4-3</a></li>
+                    <li><a href="#">menu4-4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">menu5</a>
+                <ul class="submn">
+                    <li><a href="#">menu5-1</a></li>
+                    <li><a href="#">menu5-2</a></li>
+                    <li><a href="#">menu5-3</a></li>
+                    <li><a href="#">menu5-4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        $(document).ready(function() {
+            $(".mainmn > li").hover(
+                function() {
+                    if($(this).index() == 0){
+                      $(this).find(".submn").slideDown(2000);
+                    } else if($(this).index() == 1){
+                        $(this).find(".submn").show(1000);
+                    } else if($(this).index() == 2){
+                        $(this).find(".submn").fadeIn(3000);
+                    } else if($(this).index() == 3){
+                        $(this).find(".submn").toggle(500);
+                    } else if($(this).index() == 4){
+                        $(this).find(".submn").fadeTo(500, 0.5);
+                    }
+                },
+            function() {
+                $(".submn").each(function() {
+                    if($(this).css({display:"block"})) {
+                        $(this).hide();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
